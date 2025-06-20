@@ -31,7 +31,7 @@
         attribution: '© OpenStreetMap contributors'
       }).addTo(map);
 
-      omnivore.kml('Enhanced_Geofences.kml')
+      omnivore.kml('data/Enhanced_Geofences.kml')
         .on('ready', function() {
             map.fitBounds(this.getBounds());
         })
