@@ -44,7 +44,7 @@
 
   // Get color based on group prefix
   function getColor(name) {
-    const prefix = name.split('-')[0]; // Example: "STH-001"
+    const prefix = name.split('_')[0]; // Example: "STH-001"
     return groupColors[prefix] || 'gray';
   }
 
