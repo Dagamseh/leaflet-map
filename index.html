@@ -31,11 +31,16 @@
         attribution: '© OpenStreetMap contributors'
       }).addTo(map);
 
-      omnivore.kml('data/Enhanced_Geofences.kml')
-        .on('ready', function() {
-            map.fitBounds(this.getBounds());
-        })
-        .addTo(map);
+      omnivore.kml('Enhanced_Geofences.kml')
+  .on('ready', function () {
+    var bounds = this.getBounds();
+    if (bounds.isValid()) {
+      map.fitBounds(bounds);
+    } else {
+      console.warn('No valid bounds found in KML.');
+    }
+  })
+  .addTo(map);
     </script>
 </body>
 </html>
