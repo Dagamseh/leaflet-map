@@ -44,13 +44,13 @@
 
   // Get color based on group prefix
   function getColor(name) {
-    const prefix = name.split('_')[0]; // Example: "STH-001"
+    const prefix = name.split('_')[1]; // Example: "STH-001"
     return groupColors[prefix] || 'gray';
   }
 
   omnivore.kml('Enhanced_Geofences.kml', null, L.geoJson(null, {
     style: function (feature) {
-   const name = feature.properties.Name || 'Unknown';
+    const name = (feature.properties.name || 'Unknown').trim();
       return {
         color: getColor(name),
         weight: 2,
@@ -61,7 +61,7 @@
     onEachFeature: function (feature, layer) {
    console.log('Available properties:', feature.properties);
         console.log('Feature properties:', feature.properties);
-        const name = feature.properties.Name || 'Unknown';
+        const name = (feature.properties.name || 'Unknown').trim();
       layer.bindPopup(name);
     }
   })).on('ready', function () {
