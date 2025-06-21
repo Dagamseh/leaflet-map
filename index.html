@@ -59,7 +59,8 @@
       };
     },
     onEachFeature: function (feature, layer) {
-   console.log('Feature properties:', feature.properties);
+   console.log('Available properties:', feature.properties);
+        console.log('Feature properties:', feature.properties);
         const name = feature.properties.Name || 'Unknown';
       layer.bindPopup(name);
     }
