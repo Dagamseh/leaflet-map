@@ -59,7 +59,7 @@
       };
     },
     onEachFeature: function (feature, layer) {
-      const name = feature.properties.name || 'Unknown';
+   const name = feature.properties.Name || 'Unknown';
       layer.bindPopup(name);
     }
   })).on('ready', function () {
