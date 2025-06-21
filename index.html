@@ -50,7 +50,7 @@
 
   omnivore.kml('Enhanced_Geofences.kml', null, L.geoJson(null, {
     style: function (feature) {
-      const name = feature.properties.name || '';
+   const name = feature.properties.Name || 'Unknown';
       return {
         color: getColor(name),
         weight: 2,
